@@ -10,19 +10,29 @@ import androidx.compose.ui.platform.LocalView
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 private val DarkColorScheme = darkColorScheme(
-    primary = DarkPrimary,
+    primary = Primary,
     background = DarkBackground,
     onBackground = DarkOnBackground,
     surface = DarkSurface,
-    onSurface = DarkOnSurface
+    onSurface = DarkOnSurface,
+    surfaceVariant = DarkSurfaceVariant,
+    onSurfaceVariant = DarkOnSurfaceVariant,
+    error = Error,
+    tertiary = Success,
+    inversePrimary = Disabled
 )
 
 private val LightColorScheme = lightColorScheme(
-    primary = LightPrimary,
+    primary = Primary,
     background = LightBackground,
     onBackground = LightOnBackground,
     surface = LightSurface,
-    onSurface = LightOnSurface
+    onSurface = LightOnSurface,
+    surfaceVariant = LightSurfaceVariant,
+    onSurfaceVariant = LightOnSurfaceVariant,
+    error = Error,
+    tertiary = Success,
+    inversePrimary = Disabled
 )
 
 @Composable
@@ -45,10 +55,9 @@ fun ModuleGameAppTheme(
         SideEffect {
             systemUiController.setSystemBarsColor(color = colorScheme.background)
         }
-
     }
 
     MaterialTheme(
-        colorScheme = colorScheme, typography = Typography, content = content
+        colorScheme = colorScheme, typography = Typography, shapes = Shapes, content = content
     )
 }
